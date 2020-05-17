@@ -1,13 +1,22 @@
-#import <UIKit/UIKit.h>
-#import <UINavigationController/UINavigationController.h>
 
-%hook UINavigationController
+@interface UINavigationBarLargeTitleView : UIView
+@property (nonatomic, copy, readwrite) NSString *title;
+@end
 
+%hook UINavigationBarLargeTitleView
 
--(void)viewDidLoad {
+	-(void)setTitle:(id)arg1{
 	%orig;
-	NSLOG(@"Testing if this is running");
-	self.navigationItem.title = @"newtext";
-}
+	
+	UINavigationBarLargeTitleView *swift = self;
+	if([swift.title isEqualToString:@"Library"]){
+	 swift.title = @"bruh";
+	}
+	}
+	
 
 %end
+
+%ctor {
+	%init(_ungrouped, UINavigationBarLargeTitleView = NSClassFromString(@"_UINavigationBarLargeTitleView"));
+	}

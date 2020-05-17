@@ -2,9 +2,9 @@ Package: com.atar13.muser
 Name: Muser
 Depends: mobilesubstrate
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
+Description: Changes the library text of music app.
 Maintainer: atar13
 Author: atar13
 Section: Tweaks
-Version: 0.0.1-22+debug
-Installed-Size: 152
+Version: 0.0.2-1+debug
+Installed-Size: 168
